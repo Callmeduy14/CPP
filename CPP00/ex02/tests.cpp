@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tests.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yyudi <yyudi@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/03 10:21:34 by yyudi             #+#    #+#             */
+/*   Updated: 2025/10/03 10:21:35 by yyudi            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Account.hpp"
 #include <vector>
@@ -19,7 +31,7 @@ int main(void) {
 		c.makeDeposit(3);
 
 		a.makeWithdrawal(20);
-		b.makeWithdrawal(200); 
+		b.makeWithdrawal(200);
 		c.makeWithdrawal(1);
 
 		Account::displayAccountsInfos();

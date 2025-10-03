@@ -1,4 +1,16 @@
-// ex01/PhoneBook.cpp
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yyudi <yyudi@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/03 10:20:20 by yyudi             #+#    #+#             */
+/*   Updated: 2025/10/03 10:20:21 by yyudi            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "PhoneBook.hpp"
 #include <iostream>
 #include <iomanip>
@@ -14,7 +26,6 @@ void PhoneBook::add(const Contact& c) {
 int PhoneBook::size() const { return _size; }
 
 int PhoneBook::oldestIndex() const {
-	// If not full, oldest is 0; if full, oldest is _next (the one to be overwritten next)
 	return (_size < 8) ? 0 : _next;
 }
 

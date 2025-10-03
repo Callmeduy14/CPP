@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyudi <yyudi@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/03 10:21:02 by yyudi             #+#    #+#             */
-/*   Updated: 2025/10/03 10:21:03 by yyudi            ###   ########.fr       */
+/*   Created: 2025/10/03 10:13:51 by yyudi             #+#    #+#             */
+/*   Updated: 2025/10/03 10:13:52 by yyudi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-#include "Contact.hpp"
-#include <string>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class PhoneBook {
+class DiamondTrap : public ScavTrap, public FragTrap {
 public:
-	PhoneBook();
+	DiamondTrap(const std::string& name);
+	DiamondTrap(const DiamondTrap& other);
+	DiamondTrap& operator=(const DiamondTrap& other);
+	~DiamondTrap();
 
-	void add(const Contact& c);
-	int  size() const;
-	void list() const;
-	bool printByDisplayIndex(int displayIndex) const;
+	using ScavTrap::attack; // use ScavTrap's attack
+	void whoAmI();
 
 private:
-	Contact _contacts[8];
-	int		_size;
-	int		_next;
-
-	static std::string formatField(const std::string& s);
-	int oldestIndex() const;
-	int mapDisplayToInternal(int displayIndex) const;
+	std::string name_; // same variable name as ClapTrap
 };
 
-#endif
+#endif 

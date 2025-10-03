@@ -5,23 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yyudi <yyudi@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/03 10:19:29 by yyudi             #+#    #+#              #
-#    Updated: 2025/10/03 10:19:30 by yyudi            ###   ########.fr        #
+#    Created: 2025/10/03 10:02:42 by yyudi             #+#    #+#              #
+#    Updated: 2025/10/03 10:03:24 by yyudi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CXX			:= c++
+CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98
+NAME		:= claptrap
 
-NAME    := megaphone
-CXX     := c++
-CXXFLAGS:= -Wall -Wextra -Werror -std=c++98
-
-SRCS    := megaphone.cpp
-OBJS    := $(SRCS:.cpp=.o)
+SRCS		:= main.cpp ClapTrap.cpp
+OBJS		:= $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
